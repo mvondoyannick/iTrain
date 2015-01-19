@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html manifest="apps.manifest">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-startup-image" href="img/startup.png" />
+  <link rel="shortcut icon" href="img/icon.ico">
+  <link rel="apple-touch-icon" href="img/icon.ico"/>
+  <link rel="apple-touch-icon-precomposed" href="img/icon.ico" />
+	<title></title>
+	<link rel="stylesheet" href="css/jquery.mobile.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/sweet-alert.css">
+  <link rel="stylesheet" type="text/css" href="css/datepicker.css">
+  <link rel="stylesheet" type="text/css" href="css/all.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+</head>
+<body>
+
+<div data-role="page" data-theme="a" id="index" >
+<div data-role="header" data-position="fixed" data-theme="b" class="ui-header" style="background-color: #7068B1; border-color: transparent;">
+	<a href="#nav-panel" data-rel="popup" class="ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-left ui-btn-b" style="background: rgba(0,0,0,0); border-color: transparent;" data-transition="pop">Aide</a>
+
+  <h1 id="up"></h1>
+
+  <a href="#choisir_action" data-transition="slide" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-carat-r ui-btn-icon-right ui-mini ui-corner-all" style="background: rgba(0,0,0,0); border-color: transparent;">Démarrez</a>
+</div>
+  <!-- panel principal -->
+  <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="nav-panel">
+      <ul data-role="listview">
+        <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez</a></li>
+        <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+        <li data-icon="info"><a href="#quoi-panel" data-rel="popup" data-transition="pop">Qu'est ce que c'est ?</a></li>
+        <li data-icon="comment"><a href="#guide-panel">Guide</a></li>
+        <li data-icon="alert"><a href="#confidentialite-panel" data-rel="popup" data-transition="pop">Confidentialité</a></li>
+        <li data-icon="recycle"><a href="#faq-panel" data-rel="popup" data-transition="pop">FAQ</a></li>
+        <li data-icon="edit"><a href="#apropos-panel" data-rel="popup" data-transition="pop">A propos</a></li>
+        <li data-icon="clock"><a href="#historique-panel" data-rel="popup" data-transition="pop">Mon historique</a></li>
+        <li data-icon="gear"><a href="#preference-panel" data-rel="popup" data-transition="pop">Préferences</a></li>
+        <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+        <li data-icon="refresh"><a href="index.html" rel="external">Actualiser</a></li>
+      </ul>
+    </div><!-- /panel -->
+
+    <!-- panel qu'est ce que c'est -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="quoi-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Qu'est ce que c'est?</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <div style="text-align:center;">
+              <img src="img/iTrain3.png" width="50" height="50"><br>
+              <strong>iTrain</strong>
+              <hr>
+            </div>
+            <div class="ui-body ui-body-b ui-corner-all">
+              <p style="text-align:justify;">
+                Est une application mobile et desktop permettant d'acheter et de reserver en ligne des billets de train de la société trainCam. <br>
+                Chaque utilisateur qui se connecte à l'application a cette liberté d'acheter, reserver son billet à n'importe quelle heure et à n'importe quel endroit de la planete, il peux directement payer s'il dispose d'un compte chez l'un de nos partenaires de paiement en ligne.<br>
+                Vous n'avez pas besoin d'imprimer le ticket, votre smartphone est le ticket.
+              </p>
+            </div>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#nav-panel" data-rel="popup" data-transition="pop">Retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <!-- panel confidentialité -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="confidentialite-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Confidentialité</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <h2 style="text-align:center;">
+              Informations confidentielles
+            </h2>
+            <p>
+              <p style="text-align:center;">Ces informations necessitent votre attention.</p>
+              <br/>
+              <ol>
+                <li>
+                  Vos informations personnelles comme le nom, prenom, numero de téléphone, adresse email ne seront jamais utilisé à d'autres fin que ceux liées au voyage sur notre reseau, elles ne seront JAMAIS divulgué à une personne ou entreprise.
+                </li>
+                <hr>
+                <li>
+                  Vos informations de géolocalisation à savoir votre position actuelle, celle durant votre voyage, votre ville de départ/arrivée ne seront jamais utilisé à d'autres fin que ceux liées au voyage sur notre reseau.
+                </li>
+                <hr>
+                <li>
+                  Nous ne vous suivons pas, ni sur internet, ni via geolocalisation. durant votre transit, toutes les informations qui circulent sur nos serveur sont encodées, sécurisée et détruites apres une periode de 30 jours.
+                </li>
+                <hr>
+                <li>
+                  Durant le lap de temps que vous etes sur l'application iTrain, l'ensemble des informations passe par un reseau securisé via le protocol <a href="http://fr.wikipedia.org/wiki/HyperText_Transfer_Protocol_Secure">https://</a> assurant ainsi la securité de vos données, de votre terminal ... bref, votre securité.
+                </li>
+                <hr>
+              </ol>
+            </p>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#nav-panel" data-rel="popup" data-transition="pop">Retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <!-- panel FAQ -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="faq-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | FAQ</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <p style="text-align:center;">Questions frequentes</p>
+            <div data-role="collapsible">
+              <h4>La géoloc. ne fonctionne pas</h4>
+              <p style="text-align:center;">
+                La geolocalisation est compatible pour certains smartphone via leur vavigateur ou via le GPS, verifiez si vous avec activé le GPS/Géolocalisation dans les parametre du terminal et authhoriser ce dernier a y acceder.
+              </p>
+            </div>
+            <div data-role="collapsible">
+              <h2>La voix</h2>
+              <p style="text-align:center;">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div data-role="collapsible">
+              <h2>Vibreur</h2>
+              <p style="text-align:center;">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div data-role="collapsible">
+              <h2>Smartphones compatibles</h2>
+              <p style="text-align:center;">
+                iTrain est pleinement compatible avec une large gamme de smartphone, mais surtout de navigateurs compatibles, si pour une raison ou une autres votre terminal/navigateur internetsemple ne pas repondre, essayez en un autre ou contactez nous.
+              </p>
+            </div>
+            <div data-role="collapsible">
+              <h2>La boussole</h2>
+              <p style="text-align:center;">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#nav-panel" data-rel="popup" data-transition="pop">Retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <!-- panel a propos -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="apropos-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | A propos</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+              <p style="text-align:center;">
+                <img src="img/iTrain3.png" width="50" height="50"> <br>
+                <strong>A propos</strong>
+              </p>
+              <hr>
+              <table>
+                <tr>
+                  <td>Version </td>
+                  <td>0.0.1_alpha11</td>
+                </tr>
+                <tr>
+                  <td>Developer Team</td>
+                  <td>GHOST Inc</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>dev@itrain.com</td>
+                </tr>
+              </table>
+              <br>
+              <hr>
+              <form action="" method="POST">
+                <label for="textinput-2">Nom & Prénom</label>
+                <input name="textinput-2" id="textinput-2" placeholder="Nom & prénom" value="" type="text" required>
+                <label for="textinput-2">Email</label>
+                <input name="textinput-2" id="textinput-2" placeholder="Email" value="" type="email" required>
+                <label for="textarea-2">Commentaires</label>
+                <textarea rows="8" name="textarea-2" id="textarea-2" placeholder="Des commentaires?"></textarea>
+                <p style="text-align:center;">
+                  <fieldset data-role="controlgroup" data-type="horizontal">
+                      <button type="reset" class="ui-shadow ui-btn ui-corner-all ui-inline">Annuler</button>
+                      <button type="submit" class="ui-shadow ui-btn ui-corner-all ui-inline ui-btn-active">Envoyer</button>
+                  </fieldset>
+                </p>
+
+              </form>
+            </p>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#nav-panel" data-rel="popup" data-transition="pop">Retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+                
+    <!-- panel a preference -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="preference-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Préferences</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="location">
+              <a href="#preference-geopermanante-panel" data-rel="popup" data-transition="pop">
+              Géo. permanante
+              </a>
+            </li>
+            <li>
+              <a href="#preference-vibration-panel" data-rel="popup" data-transition="pop">
+                Vibrations
+              </a>
+            </li>
+            <li data-icon="comment">
+              <a href="#preference-lang-panel" data-rel="popup" data-transition="pop">
+                Langue
+              </a>
+            </li>
+            <li data-icon="audio">
+              <a href="#preference-voix-panel" data-rel="popup" data-transition="pop">
+                Voix de synthèse
+              </a>
+            </li>
+            <li data-icon="camera">
+              <a href="#preference-apparence-panel" data-rel="popup" data-transition="pop">
+                Apparence
+              </a>
+            </li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#nav-panel" data-rel="popup" data-transition="pop">Retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <!-- panel guide -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="guide-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Guide</a></li>
+            <h3 style="text-align:center;">
+              Bienvenue!
+            </h3>
+            <p style="text-align:center;">
+              <img src="img/iTrain3.png" width="50%" height="50%" alt="debut" class="img">
+            </p>
+            <p style="text-align:center;">
+              Touchez l'image pour apprendre comment utiliser iTrain.
+            </p>
+            <li data-icon="gear" style="text-align:center;">
+              <a href="#" rel="external">Préferences</a>
+              <p>Activer la voix?</p>
+              <select name="flip-2" id="voix-param" data-role="slider">
+                    <option value="off">NON</option>
+                    <option value="on">OUI</option>
+                </select>
+              </li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#nav-panel" data-rel="popup" data-transition="pop">Retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+
+        <!-- panel historique -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="historique-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Historique</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <h1>
+              <button class="ui-btn-center ui-btn ui-btn-a ui-shadow ui-corner-all ui-mini ui-btn-active" id="historique">Afficher mon historique</button>
+            </h1>
+            <hr>
+            
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#nav-panel" data-rel="popup" data-transition="pop">Retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+
+    <!-- panel geolocalisation permanente -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="preference-geopermanante-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Géo permanante</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <div style="text-align:center;">
+              <h2>
+                Géolocalisation permanante
+              </h2>
+              <p>
+                <select name="flip-2" id="geo-param" data-role="slider">
+                    <option value="off">Désac.</option>
+                    <option value="on">Activé</option>
+                </select>
+              </p>
+              <hr>
+              <p>
+                La <strong>Géolocalisation permanante</strong> permet de vous suivre a tout temps et active ainsi les fonctions instantanées comme les notifications sur l'arrivée de votre train, l'approche de votre heure de départ et les informations sur le trafic.
+              </p>
+            </div>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#preference-panel" data-rel="popup" data-transition="pop">retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <!-- panel apparence -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="preference-apparence-panel">
+      <ul data-role="listview">
+          <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Apparence</a></li>
+          <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+          <div style="text-align:center;">
+            <h2>
+              Thème et apparence
+            </h2>
+            <p>
+              <select name="flip-2" id="apparence-param" data-role="slider">
+                  <option value="blanc">Blanc</option>
+                  <option value="noir" selected="">Noir</option>
+              </select>
+            </p>
+            <hr>
+            <p>
+              L' <strong>apparence</strong> de votre application est disponible sous deux couleur, ceci pour un confort visuel encore meilleur et une proximité plus personnelles.
+            </p>
+          </div>
+          <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+          <li data-icon="carat-l"><a href="#preference-panel" data-rel="popup" data-transition="pop">retour</a></li>
+      </ul>
+    </div><!-- /panel -->
+
+    <!-- panel activer/desactiver vibrations -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="preference-vibration-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Vibrations</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <div style="text-align:center;">
+              <h2>
+                Vibrations
+              </h2>
+              <p>
+                <select name="flip-2" id="vibre-param" data-role="slider">
+                    <option value="off">Désac.</option>
+                    <option value="on">Activé</option>
+                </select>
+              </p>
+              <hr>
+              <p>
+                La <strong>vibration</strong> permet de vous alerter lorqu'un evenement important survient au sein de l'application (notification, echec de connexion, changement de position du terminal ...). Ce parametre ne fonctionne qu'avec les terminaux disposant d'un systeme vibratoire(vibreur).<br>
+                La vibration est totalement fonctionnelle sous firefox mobile et sous android (tous navigateurs).
+              </p>
+            </div>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#preference-panel" data-rel="popup" data-transition="pop">retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <!-- panel activer/desactiver la voix de synthese -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="preference-voix-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Voix</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <div style="text-align:center;">
+              <h2>
+                Voix de synthèse
+              </h2>
+              <p>
+                <select name="flip-2" id="tts-param" data-role="slider">
+                    <option value="off">Désac.</option>
+                    <option value="on">Activé</option>
+                </select>
+              </p>
+              <hr>
+              <p>
+                La <strong>voix de systhèse</strong> est un dispositif qui permet de venir en aide aux personnes mal voyantes ou soufrante de difficultés de vue legere. la voix de synthese vous guidera et vous aidera suivant les differentes etapes et actions possible.<br>
+                La voix est totalement fonctionnelle sous tous les terminaux acceptant la synthese vocale, une connexion internet peut etre requise.
+              </p>
+            </div>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#preference-panel" data-rel="popup" data-transition="pop">retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+    <!-- panel parametres langue anglais francais -->
+    <div data-role="panel" data-position-fixed="true" data-display="overlay" data-theme="b" id="preference-lang-panel">
+        <ul data-role="listview">
+            <li data-icon="power"><a href="#" data-rel="close" data-theme="a">Fermez | Language</a></li>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <div style="text-align:center;">
+              <h2>
+                Langue de l'application
+              </h2>
+              <p>
+                <select name="flip-2" id="lang-param" data-role="slider">
+                    <option value="fr">Franc.</option>
+                    <option value="en">Engli.</option>
+                </select>
+              </p>
+              <hr>
+              <p>
+                L'application est disponible sous deux langue a savoir le francais et l'anglais, toutes autres langues peuvent etre telechargées comme package linguistique payant.
+              </p>
+            </div>
+            <li data-role="list-divider" style="background: none transparent; border-color: transparent;">&nbsp;</li>
+            <li data-icon="carat-l"><a href="#preference-panel" data-rel="popup" data-transition="pop">retour</a></li>
+        </ul>
+    </div><!-- /panel -->
+
+<div data-role="content" style="background-color: #7068B1;">
+	<div style="text-align:center; display:none; margin-top: 0px;" id="block">
+  <div>Bienvenue</div>
+  <br>
+		<a href="#choisir_action" data-transition="slide">
+      <img src="img/iTrain3.png" alt="" width="200" height="200" id="logo" style="-webkit-animation-iteration-count: 4; -moz-animation-iteration-count: 4; -animation-iteration-count: 4;">
+    </a>
+		<div>
+			<h3 class="titre">
+			Touchez l'icone.
+			</h3>
+      <code id="conteneur_p_cookie"></code>
+		</div>		
+	</div>
+  <!-- on affiche le cercle de chargement -->
+  <div id="circle" style="text-align:center; margin-top:50px;"></div>
+</div>
+<div data-role="footer" style="background: rgba(0,0,0,0); background-color: #7068B1; z-index: 2; border-color:transparent;" data-theme="b" data-position="fixed">
+<h1>
+  <a href="#reservation" data-transition="slide" class="ui-btn ui-btn-center ui-corner-all ui-btn-active ui-mini" id="btn-reservation">Je fais ma réservation</a>
+</h1>
+</div>
+
+<!--div data-role="popup" id="GTKInfoPopupUser" data-theme="a" data-transition="flow">
+  <p id="id" style="text-align:center;"></p>
+  <p id="conteneur_p_cookie" style="text-align:center;"></p>
+  <p id="progressbar"></p>
+</div -->
+
+<div data-role="popup" id="GTKInfoPopupAide" data-arrow="true" data-theme="a" data-transition="flow">
+  <p style="text-align:center;">
+    <strong>Perdu ou désorienté?</strong><br> Pourquoi ne pas toucher cette grosse icone derrière pour commencer?
+  </p>
+  <p style="text-align:center;">
+    <a href="#" data-rel="back" class="ui-btn ui-btn-inline ui-btn-b ui-shadow ui-corner-all ui-mini">OK</a>
+    <a href="#guide-panel" data-rel="close" data-transition="pop" class="ui-btn ui-btn-inline ui-btn-b ui-shadow ui-corner-all ui-mini" id="ccm">Comment ca marche?</a >
+  </p>
+</div>
+
+
+<div data-role="popup" id="GTKInfoConnexion" data-theme="a" data-transition="flow">
+  <p id="id" style="text-align:center;"></p>
+  <p>Il semble que nous n'ete pas connecté à internet, verifiez votre connexion internet et actualiser de nouveau l'application</p>
+  <p style="text-align:center;">
+    <a data-rel="back" class="ui-btn ui-btn-inline ui-btn-b ui-shadow ui-corner-all ui-mini">j'ai compris</a>
+  </p>
+</div>
+
+</div>
+
+  <div data-role="page" data-theme="b" id="choisir_action">
+      <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+       <a href="#index" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-mini ui-corner-all">Acceuil</a>
+       <h1>iTrain</h1>
+       <a href="#info" data-rel="popup" data-split-icon="info" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+      </div>
+
+      <div data-role="popup" id="info" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Informations</h4>
+          <h2 style="text-align:center;">
+            <img src="img/i.png" alt="" width="" height="">
+          </h2>
+          <p>Aide flash (i) : Permet à tout instant de savoir ce que vous allez faire</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+      <div data-role="content">
+      <div style="text-align:center;">
+          <p>Que souhaitez vous faire?</p>
+      </div>
+          <ul data-role="listview" data-split-icon="info" data-inset="true" data-filter="false" data-filter-placeholder="Trouver rapidement une ville" style="background: rgba(0,0,0,0);">
+              <li>
+                  <a href="#localisation" data-transition="slide">
+                  <img src="img/pay_64.png" width="85" height="85">
+                      <h2>Acheter un billet</h2>
+                      <p>Achetez un billet pour partir sous 24h</p>
+                  </a>
+                  <a href="#acheter_billet" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+              </li>
+              <li data-role="list-divider"></li>
+              <li>
+                  <a href="#reservation" data-transition="slide">
+                  <img src="img/r_64.png" width="85" height="85">
+                      <h2>Reserver une place</h2>
+                      <p>Programmer une place quand vous le souhaité</p>
+                  </a>
+                  <a href="#reserver_billet" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+              </li>
+              <li data-role="list-divider"></li>
+              <li>
+                  <a href="#h" data-transition="slide">
+                  <img src="img/horaire.png" width="85" height="85">
+                      <h2>Voir les Horaires</h2>
+                      <p>Tableau des départs et des arrivées</p>
+                  </a>
+                  <a href="#horaire_voyage" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+              </li>
+              <li data-role="list-divider"></li>
+              <li>
+                  <a href="#tarif" data-transition="slide">
+                  <img src="img/grille_tarifaire.png" width="85" height="85">
+                      <h2>Grille tarifaire</h2>
+                      <p>Retrouver nos prix ici</p>
+                  </a>
+                  <a href="#prix_tarifaire" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+              </li>
+              <li data-role="list-divider"></li>
+              <li>
+                  <a href="carte.html" rel="external" data-transition="slide">
+                  <img src="img/carte.png" width="85" height="85">
+                      <h2>Carte du trajet</h2>
+                      <p>Visualisez la carte du parcours</p>
+                  </a>
+                  <a href="#carte_voyage" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+              </li>
+          </ul>
+
+          <div data-role="popup" id="acheter_billet" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h4 style="text-align:center;">Infos | Achat de billet</h4>
+            <h2 style="text-align:center;">
+              <img src="img/pay.png" alt="" width="" height="">
+            </h2>
+            <p>Sélectionnez cette opération pour effectuer l'achat d'un billet de transport.</p>
+            <div style="text-align:center;">
+              <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+            </div>
+          </div>
+
+          <div data-role="popup" id="reserver_billet" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h4 style="text-align:center;">Infos | Reserver billet</h4>
+            <h2 style="text-align:center;">
+              <img src="img/r.png" alt="" width="" height="">
+            </h2>
+            <p>Sélectionnez cette opération pour effectuer une réservation.</p>
+            <div style="text-align:center;">
+              <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+            </div>
+          </div>
+
+          <div data-role="popup" id="horaire_voyage" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h4 style="text-align:center;">Infos | Les horaires</h4>
+            <h2 style="text-align:center;">
+              <img src="img/horaire.png" alt="" width="" height="">
+            </h2>
+            <p>Retrouvez ici toutes les informations nécessaires sur nos horaires (Départ & Arrivée).</p>
+            <div style="text-align:center;">
+              <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+            </div>
+          </div>
+
+          <div data-role="popup" id="carte_voyage" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h4 style="text-align:center;">Infos | La carte du parcours</h4>
+            <h2 style="text-align:center;">
+              <img src="img/quoi.png" alt="" width="" height="">
+            </h2>
+            <p>Découvrez le réseau férovière de camrail et plusieurs informations complementaires sur une carte interactive.</p>
+            <div style="text-align:center;">
+              <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+            </div>
+          </div>
+
+          <div data-role="popup" id="prix_tarifaire" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h4 style="text-align:center;">Infos | Grille tarifaire</h4>
+            <h2 style="text-align:center;">
+              <img src="img/grille_tarifaire_48.png" alt="" width="" height="">
+            </h2>
+            <p>Découvrez ici tous les prix pratiqués.</p>
+            <div style="text-align:center;">
+              <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+            </div>
+          </div>
+      </div>
+  </div>
+
+<div data-role="page" data-theme="b" id="localisation">
+    <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+        <a href="#choisir_action" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-mini ui-corner-all">Acceuil</a>
+        <h1>iTrain</h1>
+        <a href="#info_localisation" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all" id="ma_position">Infos</a>
+    </div>
+
+    <div data-role="popup" id="info_localisation" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Informations</h4>
+          <h2 style="text-align:center;">
+            <img src="img/i.png" alt="" width="" height="">
+          </h2>
+          <p>Nous souhaitons savoir dans quelle ville vous vous trouvez actuellement, veuillez choisir l'une des deux options disponibles.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline">Fermer</a>
+          </div>
+        </div>
+
+    <div data-role="content">
+    <div style="text-align:center;">
+        <p>Choisir la ville de départ en ...</p>
+    </div>
+        <ul data-role="listview" data-split-icon="info" data-inset="true" data-filter="false" data-filter-placeholder="Trouver rapidement une ville" style="background: rgba(0,0,0,0);">
+            <li data-role="list-divider" style="background: rgba(0,0,0,0);">Detectant automatiquement ...</li>
+            <li>
+                <a data-ajax="false" href="maps.html" rel="external" data-transition="slide">
+                <img src="img/location.png" width="85" height="85">
+                    <h2>Ma position</h2>
+                    <p>Trouver ma ville automatiquement</p>
+                </a>
+                <a href="#geo" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+            </li>
+            <li data-role="list-divider">Choisissant ...</li>
+            <li>
+                <a href="#liste_depart" data-transition="slide">
+                <img src="img/liste_flat.png" width="85" height="85">
+                    <h2>Dans la liste</h2>
+                    <p>Choisir dans la liste</p>
+                </a>
+                <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+            </li>
+        </ul>
+
+        <div data-role="popup" id="geo" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos | Géolocalisation</h4>
+          <h2 style="text-align:center;">
+            <img src="img/geo.png" alt="" width="" height="">
+          </h2>
+          <p>Détection automatique de votre position. Nous sommes en mesure de trouver la ville dans laquelle vous vous trouvez .Cette fonction n'est pas disponible sur tous les terminaux, en cas de doute il est préferable de choisir sa position dans la liste des villes.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+        <div data-role="popup" id="liste" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos | Liste des villes</h4>
+          <h2 style="text-align:center;">
+            <img src="img/ville.png" alt="" width="" height="">
+          </h2>
+          <p>Elle comprend l'ensemble de villes enregistrées sur notre réseau pour ce service.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-theme="b">
+      <h4 id="heure">
+        
+      </h4>
+    </div>
+</div>
+
+
+<div data-role="page" data-theme="b" id="liste_depart">
+    <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+        <a href="#localisation" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-mini ui-corner-all" id="annulerDepart">retour</a>
+        <h1>iTrain</h1>
+        <a href="#info_liste_depart" data-rel="popup" data-split-icon="info" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+    </div>
+    <div data-role="content">
+    <div style="text-align:center;">
+        <p>Où êtes-vous ?</p>
+    </div>
+        <ul data-role="listview" data-split-icon="location" data-inset="true" data-filter="false" data-filter-placeholder="Trouver rapidement une ville">
+            <li>
+                <a href="#arrivee" data-transition="slide" class="depart" title="douala">
+                <img src="img/douala.png" alt="" width="85"  height="85">
+                    <h2>Douala</h2>
+                    <p>Région du Littoral</p>
+                </a>
+                <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+            </li>
+            <li data-role="list-divider"></li>
+            <li>
+                <a href="#arrivee" data-transition="slide" class="depart" title="yaounde">
+                <img src="img/yaounde.png" alt="" width="85"  height="85">
+                    <h2>Yaounde</h2>
+                    <p>Région du Centre</p>
+                </a>
+                <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+            </li>
+            <li data-role="list-divider"></li>
+            <li>
+                <a href="#" data-transition="slide" class="depart" title="yaounde">
+                <img src="img/ville1.png" alt="" width="85"  height="85">
+                    <h2>Ville_Départ 3</h2>
+                    <p>Région inconnue</p>
+                </a>
+                <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+            </li>
+            <li data-role="list-divider"></li>
+            <li>
+                <a href="#" data-transition="slide" class="depart" title="yaounde">
+                <img src="img/ville1.png" alt="" width="85"  height="85">
+                    <h2>Ville_Départ 4</h2>
+                    <p>Région inconnue</p>
+                </a>
+                <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed" data-theme="b" style="background: rgba(0,0,0,0); z-index: 2; border-color: transparent;">
+      <h1>
+        <a href="maps.html" class="ui-btn ui-shadow ui-btn-active ui-mini ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-location">Détecter ma position</a>
+      </h1>
+    </div>
+
+    <div data-role="popup" id="info_liste_depart" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos</h4>
+          <h2 style="text-align:center;">
+            <img src="img/i.png" alt="" width="" height="">
+          </h2>
+          <p>Nous avons listé les villes (gares) que deserve nos trains, ces villes peuvent augmenter ou diminuer en fonction de la maturité du réseau.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+<div data-role="page" data-theme="b" id="arrivee">
+ <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+  <a href="#liste_depart" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-mini ui-corner-all" id="init_arrivee">Retour</a>
+  <h1>iTrain</h1>
+  <a href="#info_arrivee" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+ </div>
+ <div data-role="content">
+ <div style="text-align:center;">
+  <p>Ou allez-vous?</p>
+ </div>
+  <ul data-role="listview" data-split-icon="location" data-inset="true" data-filter="false" data-filter-placeholder="Trouver rapidement une ville">
+   <li id="douala">
+    <a href="#typeVoyage" data-transition="slide" class="arrivee" title="douala">
+     <img src="img/douala.png" alt="" width="85" height="85">
+      <h1>Douala</h1>
+      <p>Région du Littoral</p>
+    </a>
+    <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+   </li>
+   <li data-role="list-divider"></li>
+   <li id="yaounde">
+    <a href="#typeVoyage" data-transition="slide" class="arrivee" title="yaounde">
+    <img src="img/yaounde.png" alt="" width="85" height="85">
+     <h1>Yaounde</h1>
+     <p>Région du Centre</p>
+    </a>
+    <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+   </li>
+   <li data-role="list-divider"></li>
+   <li id="">
+    <a href="#" data-transition="slide" class="arrivee_" title="yaounde">
+    <img src="img/ville1.png" alt="" width="85" height="85">
+     <h1>Ville Arrivée1</h1>
+     <p>Région région inconnue</p>
+    </a>
+    <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+   </li>
+   <li data-role="list-divider"></li>
+   <li id="">
+    <a href="#" data-transition="slide" class="arrivee_" title="yaounde">
+    <img src="img/ville1.png" alt="" width="85" height="85">
+     <h1>Ville Arrivée1</h1>
+     <p>Région région inconnue</p>
+    </a>
+    <a href="#liste" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disabled">Informations</a>
+   </li>
+  </ul>
+ </div>
+ <div data-role="footer" data-position="fixed" data-theme="b">
+ <h1>
+   
+ </h1>
+ </div>
+
+    <div data-role="popup" id="autre" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+    <form method="POST" action="#" id="form_autre_ville_recherche">
+        <h4 style="text-align:center;">Autres villes?</h4>
+        <p>Faites une recherche d'autres villes</p>
+        <h2 style="text-align:center;">
+          <img src="img/ville.png" alt="" width="" height="">
+        </h2>
+        <div style="text-align:center;">
+          <input type="text" data-clear-btn="true" id="zone_recherche_ville_arrivee">
+        </div>
+        <div style="display:none;">
+          <p id="resultat"></p>
+        </div>
+        <div style="text-align:center;">
+          <button type="submit" class="ui-shadow ui-btn-b ui-btn ui-corner-all ui-btn-inline ui-mini ui-btn-active">Rechercher</button>&nbsp;<a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+      </div>
+    </form>
+    </div>
+
+    <div data-role="popup" id="info_arrivee" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+        <h4 style="text-align:center;">Infos</h4>
+        <h2 style="text-align:center;">
+          <img src="img/i.png" alt="" width="" height="">
+        </h2>
+        <p>Aide flash (i) : Permet à tout instant de savoir ce que vous allez faire.</p>
+        <div style="text-align:center;">
+          <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+      </div>
+    </div>
+
+  </div>
+
+
+<div data-role="page" data-theme="b" id="typeVoyage">
+	<div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+		<a href="#arrivee" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-mini ui-icon-carat-l ui-btn-icon-left ui-corner-all">Retour</a>
+		<h1>iTrain</h1>
+		<a href="#info_typevoyage" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+	</div>
+	<div data-role="content">
+	<div style="text-align:center;">
+		<p>Quelle est votre classe de voyage?</p>
+	</div>
+		<ul data-role="listview" data-split-icon="info" data-inset="true" data-filter="false" data-filter-placeholder="Recherche rapide Type de Voyage">
+			<li>
+				<a href="#eco" data-transition="slide" class="typevoyage" title="economique">
+					<img src="img/nous_64.png" alt="" width="85" height="85">
+						<h1>Economique</h1>
+						<p>Ouvert à tous</p>
+				</a>
+        <a href="#eco" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+			</li>
+      <li data-role="list-divider"></li>
+			<li>
+				<a href="#eco" data-transition="slide" class="typevoyage" title="affaire">
+					<img src="img/save.png" alt="" width="85" height="85">
+						<h1>Affaire</h1>
+						<p>Ouvert aux particuliers</p>
+				</a>
+        <a href="#affaire" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+			</li>
+      <li data-role="list-divider"></li>
+			<li>
+				<a href="#eco" data-transition="slide" class="typevoyage" title="prestige">
+					<img src="img/prestige_64.png" alt="" width="85" height="85">
+						<h1>Prestige</h1>
+						<p>Ouvert aux VIP</p>
+				</a>
+        <a href="#reservation" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+			</li>
+		</ul>
+
+        <div data-role="popup" id="eco" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos | Classe Economique</h4>
+          <h2 style="text-align:center;">
+            <img src="img/nous_48.png" alt="" width="" height="">
+          </h2>
+          <p>Voyagez en toute sécurié et confort à des prix qui battent toute compétition.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+        <div data-role="popup" id="affaire" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos | Classe Affaire</h4>
+          <h2 style="text-align:center;">
+            <img src="img/affaire_48.png" alt="" width="" height="">
+          </h2>
+          <p>La classe Affaire a ete pensée pour les personnes voulant créer un environement de travail autour d'eux.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+        <div data-role="popup" id="reservation" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos | Classe Prestige</h4>
+          <h2 style="text-align:center;">
+            <img src="img/prestige_48.png" alt="" width="" height="">
+          </h2>
+          <p>La classe Prestige a été pensée pour tous ceux qui aiment le confort.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+	</div>
+  <div data-role="footer" data-position="fixed" data-theme="b">
+    <h1>
+      <a href="#tarif_2" data-transition="slide" class="ui-btn ui-shadow ui-btn-active ui-mini ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-location">Voir les tarifs</a>
+    </h1>
+  </div>	
+
+ <div data-role="popup" id="info_typevoyage" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos</h4>
+          <h2 style="text-align:center;">
+            <img src="img/i.png" alt="" width="" height="">
+          </h2>
+          <p>Aide flash (i) : Permet à tout instant de savoir ce que vous allez faire.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+    </div>
+</div>
+
+  <div data-role="page" data-theme="b" id="eco">
+   <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+    <a href="#typeVoyage" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-mini ui-corner-all" id="init_arrivee">Retour</a>
+    <h1>iTrain</h1>
+    <a href="#info" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+   </div>
+
+        <div data-role="popup" id="info" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Informations</h4>
+          <h2 style="text-align:center;">
+            <img src="img/i.png" alt="" width="" height="">
+          </h2>
+          <p>L'aide flash vous permet a tout instant de savoir a quoi sert l'objet qui est devant vous, il est en general symbolisé par le signe "+"  à la drote de l'élement </p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+       <div data-role="content">
+       <div style="text-align:center;">
+        <p>A quel moment de la journée souhaitez-vous voyager?</p>
+       </div>
+        <ul data-role="listview" data-split-icon="info" data-inset="true" data-filter="false" data-filter-placeholder="Trouver rapidement une ville">
+         <li data-role="list-divider">Je veux quitter ...</li>
+         <li>
+          <a href="#choix" data-rel="popup" data-position-to="window" data-transition="pop" class="horaire_eco" title="matin">
+           <img src="img/matin.png" alt="" width="100" height="100">
+            <h1>Le matin</h1>
+            <p class="heure_depart_matin"></p>
+          </a>
+          <a href="#mat" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+         </li>
+         <li data-role="list-divider">Je veux quitter ...</li>
+         <li>
+          <a href="#choix" data-rel="popup" data-position-to="window" data-transition="pop" class="horaire_eco" title="soir">
+          <img src="img/soir.png" alt="" width="100" height="100">
+           <h1>L'apres midi</h1>
+           <p class="heure_depart_soir"></p>
+          </a>
+          <a href="#soir" data-rel="popup" data-position-to="window" data-transition="pop">Informations</a>
+         </li>
+        </ul>
+
+        <div data-role="popup" id="mat" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align: center;">Infos | Départ du matin</h4>
+          <h2 style="text-align: center;">
+            <img src="img/matin.png" alt="" width="48" height="48">
+          </h2>
+          <p>Les departs du matin se font sur les trains Inter-city (IC) dès 06 (six) heures du matin. Le temps du trajet est en moyenne de 03 heures.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+        <div data-role="popup" id="soir" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">infos | Départ du soir</h4>
+          <h2 style="text-align:center;">
+            <img src="img/soir.png" alt="" width="48" height="48">
+          </h2>
+          <p>Les departs du soir(apres midi) se font sur les trains Inter-city (IC) dès 14 (quatorze) heures de l'apres midi. Le temps du trajet est en moyenne de 03 heures</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+        <div data-role="popup" id="horaire" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Infos | Les horaires</h4>
+          <h2 style="text-align:center;">
+            <img src="img/horaire.png" alt="" width="" height="">
+          </h2>
+          <p>Notre reseau de transport respecte les diffentes normes en matiere de temps et de depart. Vous tenir informer des differents horaires dans chaque ville est un atout pour vous.</p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+        <div data-role="popup" id="choix" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Vous effectuez ...</h4>
+          <ul data-role="listview" data-split-icon="info" data-inset="true" data-filter="false" data-filter-placeholder="Trouver rapidement une ville">
+             <li>
+              <a href="#form" data-transition="slide" class="aller_retour" title="aller">
+               <img src="img/yde.png" alt="" width="100" height="100">
+                <h1>Allée simple</h1>
+                <p id="detail_allee"></p>
+              </a>
+              <a href="#" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disable">Informations</a>
+             </li>
+             <li data-role="list-divider"></li>
+             <li>
+              <a href="#form" data-transition="slide" class="aller_retour" title="aller-retour">
+              <img src="img/yde.png" alt="" width="100" height="100">
+               <h1>Allée & Retour</h1>
+               <p id="detail_allee_retour"></p>
+              </a>
+              <a href="#" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-state-disable">Informations</a>
+             </li>
+            </ul>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+   </div>
+   <div data-role="footer" data-position="fixed" data-theme="b">
+      <h1>
+        <a href="#h_2" data-transition="slide" class="ui-btn ui-shadow ui-btn-active ui-mini ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-location">Voir les horaires</a>
+      </h1>
+   </div>
+  </div>
+
+
+  <div data-role="page" data-theme="b" id="h">
+    <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+      <a href="#choisir_action" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-mini ui-corner-all" id="init_arrivee">Retour</a>
+      <h1>iTrain</h1>
+      <a href="#" data-transition="slide"  class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+    </div>
+    <div data-role="content">
+    <h1 style="text-align:center;">Horaires</h1>
+          <h2>Douala | Les horaires</h2>
+            <ul data-role="listview" data-theme="a" data-divider-theme="a" data-inset="true">
+                <li data-role="list-divider">Tous les jours | Départs <span class="ui-li-count">2</span></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>BESSENGUE</h3>
+                    <p style="color:red;"><strong>6:00</strong> Matin</p>
+                  </a>
+                </li>
+                <li data-role="list-divider"></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>BESSENGUE</h3>
+                    <p style="color:red;"><strong>14:40</strong> Soir</p>
+                  </a>
+                </li>
+            </ul>
+           <h2>Yaounde | Les horaires</h2>
+            <ul data-role="listview" data-split-icon="info" data-theme="a" data-divider-theme="a" data-inset="true">
+                <li data-role="list-divider">Tous les jours | Départs <span class="ui-li-count">2</span></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>ELIG-ESSONO</h3>
+                    <p style="color:red;"><strong>10:15</strong> Matin</p>
+                  </a>
+                </li>
+                <li data-role="list-divider"></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>ELIG-ESSONO</h3>
+                    <p style="color:red;"><strong>19:15</strong> Soir</p>
+                  </a>
+                </li>
+            </ul>
+    </div>
+    </div>
+  </div>
+
+
+  <div data-role="page" data-theme="b" id="h_2">
+    <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+      <a href="#eco" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-mini ui-corner-all" id="init_arrivee">Retour</a>
+      <h1>iTrain</h1>
+      <a href="#" data-transition="slide"  class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+    </div>
+    <div data-role="content">
+    <h1 style="text-align:center;">Horaires</h1>
+          <h2>Douala | Les horaires</h2>
+            <ul data-role="listview" data-theme="a" data-divider-theme="a" data-inset="true">
+                <li data-role="list-divider">Tous les jours | Départs <span class="ui-li-count">2</span></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>BESSENGUE</h3>
+                    <p style="color:red;"><strong>6:00</strong> Matin</p>
+                  </a>
+                </li>
+                <li data-role="list-divider"></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>BESSENGUE</h3>
+                    <p style="color:red;"><strong>14:40</strong> Soir</p>
+                  </a>
+                </li>
+            </ul>
+           <h2>Yaounde | Les horaires</h2>
+            <ul data-role="listview" data-split-icon="info" data-theme="a" data-divider-theme="a" data-inset="true">
+                <li data-role="list-divider">Tous les jours | Départs <span class="ui-li-count">2</span></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>ELIG-ESSONO</h3>
+                    <p style="color:red;"><strong>10:15</strong> Matin</p>
+                  </a>
+                </li>
+                <li data-role="list-divider"></li>
+                <li>
+                  <a href="#">
+                    <img src="img/horaire.png" alt="" width="85" height="85">
+                    <h3>ELIG-ESSONO</h3>
+                    <p style="color:red;"><strong>19:15</strong> Soir</p>
+                  </a>
+                </li>
+            </ul>
+    </div>
+    </div>
+
+
+      <div data-role="page" data-theme="b" id="tarif">
+        <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+          <a href="#choisir_action" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-mini ui-corner-all" id="init_arrivee">Retour</a>
+          <h1>iTrain</h1>
+          <a href="#" data-transition="slide"  class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+        </div>
+        <div data-role="content">
+        <p style="text-align:center;">Tarifs</p>
+              <h3>Classe Economique</h3>
+                <ul data-role="listview" data-theme="a" data-divider-theme="a" data-inset="true">
+                    <li data-role="list-divider" style="font-size:12px;">Douala-Yaoundé | Yaoundé-Douala </li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée simple</h3>
+                        <p style="color:red;"><strong>3 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                    <li data-role="list-divider"></li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée & retour</h3>
+                        <p style="color:red;"><strong>6 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                </ul>
+               <h3>Classe Affaire</h3>
+                <ul data-role="listview" data-split-icon="info" data-theme="a" data-divider-theme="a" data-inset="true">
+                    <li data-role="list-divider"style="font-size:12px;">Douala-Yaoundé | Yaoundé-Douala </li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée simple</h3>
+                        <p style="color:red;"><strong>6 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                    <li data-role="list-divider"></li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée & retour</h3>
+                        <p style="color:red;"><strong>11 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                </ul>
+              <h3>Classe Prestige</h3>
+                <ul data-role="listview" data-split-icon="info" data-theme="a" data-divider-theme="a" data-inset="true">
+                    <li data-role="list-divider"style="font-size:12px;">Douala-Yaoundé | Yaoundé-Douala </li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée simple</h3>
+                        <p style="color:red;"><strong>9 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                    <li data-role="list-divider"></li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée & retour</h3>
+                        <p style="color:red;"><strong>15 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                </ul>
+        </div>
+        </div>
+      </div>
+
+
+    <div data-role="page" data-theme="b" id="tarif_2">
+        <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+          <a href="#typeVoyage" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-mini ui-corner-all" id="init_arrivee">Retour</a>
+          <h1>iTrain</h1>
+          <a href="#" data-transition="slide"  class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+        </div>
+        <div data-role="content">
+        <p style="text-align:center;">Tarifs</p>
+              <h3>Classe Economique</h3>
+                <ul data-role="listview" data-theme="a" data-divider-theme="a" data-inset="true">
+                    <li data-role="list-divider" style="font-size:12px;">Douala-Yaoundé | Yaoundé-Douala </li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée simple</h3>
+                        <p style="color:red;"><strong>3 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                    <li data-role="list-divider"></li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée & retour</h3>
+                        <p style="color:red;"><strong>6 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                </ul>
+               <h3>Classe Affaire</h3>
+                <ul data-role="listview" data-split-icon="info" data-theme="a" data-divider-theme="a" data-inset="true">
+                    <li data-role="list-divider"style="font-size:12px;">Douala-Yaoundé | Yaoundé-Douala </li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée simple</h3>
+                        <p style="color:red;"><strong>6 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                    <li data-role="list-divider"></li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée & retour</h3>
+                        <p style="color:red;"><strong>11 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                </ul>
+              <h3>Classe Prestige</h3>
+                <ul data-role="listview" data-split-icon="info" data-theme="a" data-divider-theme="a" data-inset="true">
+                    <li data-role="list-divider"style="font-size:12px;">Douala-Yaoundé | Yaoundé-Douala </li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée simple</h3>
+                        <p style="color:red;"><strong>9 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                    <li data-role="list-divider"></li>
+                    <li>
+                      <a href="#">
+                        <h3>Allée & retour</h3>
+                        <p style="color:red;"><strong>15 000</strong> FCFA</p>
+                      </a>
+                    </li>
+                </ul>
+        </div>
+        </div>
+      </div>
+
+
+
+
+    <div data-role="page" data-theme="b" id="form">
+     <div data-role="header" data-position="fixed" data-theme="a">
+      <a href="#eco" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all ui-icon-carat-l ui-btn-icon-left" id="quitter_form">Retour</a>
+      <h1>iTrain</h1>
+       <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-right ui-btn-b" id="verifier">Vérifiez</a>
+       <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+           <div data-role="header" data-theme="a">
+           <p>Verification</p>
+           </div>
+           <div role="main" class="ui-content">
+           <table border="0">
+              <tr>
+             <td>Nom</td>
+             <td class="nom">Inconnu</td>
+            </tr>
+            <tr>
+             <td>Prénom </td>
+             <td class="prenom">Inconnu</td>
+            </tr>
+            <tr>
+             <td>Heure</td>
+             <td class="ha">demo</td>
+            </tr>
+            <tr>
+             <td>Départ</td>
+             <td class="vd">demo</td>
+            </tr>
+            <tr>
+             <td>Arrivée</td>
+             <td class="va">demo</td>
+            </tr>
+            <tr>
+             <td>Classe</td>
+             <td class="tv">demo</td>
+            </tr>
+            <tr>
+             <td>Type</td>
+             <td class="ar">demo</td>
+            </tr>
+            <tr>
+             <td>Prix</td>
+             <td class="prix">Inconnu</td>
+            </tr>
+            <tr>
+             <td>Distance</td>
+             <td class="distance">300Km</td>
+            </tr>
+            <tr>
+             <td>Durée</td>
+             <td class="temps">3h 30mn</td>
+            </tr>
+            <tr>
+             <td>Email</td>
+             <td class="email">demo</td>
+            </tr>
+            </table> 
+                <div style="text-align:center;">
+                  <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-mini ui-btn-active ui-icon-edit ui-btn-icon-left" data-rel="back" id="ok">Tout est OK</a>
+                &nbsp;
+                  <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-mini ui-icon-alert ui-btn-icon-right" data-transition="flow" id="erreur" >Modifier</a>
+                </div>
+           
+           </div>
+       </div>
+
+     </div>
+
+     <img style="display:none; padding-top: 50%; padding-left:50%;" id="loader" src="img/ajax-loader.gif" alt="chargement ..." width="" height="" />
+
+     <div data-role="content" id="content">
+     <div align="center">
+      <p>Pour finaliser votre action, remplisser les zones demandées</p>
+     </div>
+     
+      <form action="" method="POST" id="formulaire">
+
+        <ul data-role="listview" data-inset="true">
+            <li class="ui-field-contain">
+                <label for="nom">Votre nom</label>
+                <input name="nom" id="nom" value="" data-clear-btn="true" type="text">
+            </li>
+            <li data-role="list-divider"></li>
+            <li class="ui-field-contain">
+                <label for="prenom">Votre prénom</label>
+                <input name="prenom" id="prenom" value="" data-clear-btn="true" type="text">
+            </li>
+            <li data-role="list-divider"></li>
+            <li class="ui-field-contain">
+                <label for="telephone">Votre Téléphone</label>
+                <input name="telephone" id="telephone" value="" data-clear-btn="true" type="tel">
+            </li>
+            <li data-role="list-divider" style="display:none;" class="email_divider"></li>
+            <li class="ui-field-contain" style="display:none;" id="email_text">
+                <label for="email">Votre email</label>
+                <input name="email" id="email" value="" data-clear-btn="true" type="email">
+            </li>
+          </ul>
+          <div style="text-align:center;">
+            <button class="ui-btn ui-corner-all ui-btn-inline ui-btn-a ui-btn-active ui-mini" id="add_email">Ajouter mon email?</button>
+            <p style="font-size:8px;">Recevoir la confirmation via email</p>
+          </div>
+         </div>
+     <div data-role="footer" data-position="fixed" style="background: rgba(12,45,100,0.20); border-color: transparent;">
+     <div style="text-align:center;" id="btn-submit">
+       <button type="reset" class="ui-btn ui-corner-all ui-btn-inline ui-btn-a ui-icon-alert ui-btn-icon-left">Réinitialisez</button>
+       <button type="submit" class="ui-btn ui-corner-all ui-btn-inline ui-btn-a ui-icon-check ui-btn-icon-right ui-btn-active" id="valider">Confirmez</button>
+       <p id="noty"></p>
+      </div>
+     </div>
+     </form>
+     <div style="text-align:center;" class="placeDisponible">Patientez, calcule des places disponibles</div>
+     <div style="text-align:center; font-size:35px" class="compteur">
+       <img src="img/ajax-loader.gif" alt="">
+     </div>
+
+     <div data-role="popup" id="popupArrow" data-arrow="true" data-theme="a" data-transition="flow">
+        <p>Remplire automatiquement vos informations personelles?</p>
+        <p style="text-align:center;">
+          <a href="#" data-rel="back" class="ui-btn ui-btn-inline ui-btn-b ui-shadow ui-corner-all ui-mini">NON</a><button class="ui-btn ui-btn-inline ui-btn-b ui-shadow ui-corner-all ui-mini" id="auto_remplir">OUI</button>
+        </p>
+      </div>
+
+      <div data-role="popup" id="nocookie" data-arrow="true" data-theme="a" data-transition="flow">
+        <p id="id" style="text-align:center;"></p>
+        <p>Replissez ce formulaire avec précision, il permettra de vous fournir un ticket numerique complet.</p>
+        <p style="text-align:center;">
+          <a href="#" data-rel="back" class="ui-btn ui-btn-inline ui-btn-b ui-shadow ui-corner-all ui-mini">j'ai compris</a>
+        </p>
+      </div>
+
+  </div>
+
+
+  <div data-role="page" data-theme="b" id="reservation">
+    <div data-role="header" data-position="fixed" data-theme="a" class="ui-header-other">
+      <a href="#choisir_action" data-transition="slide" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-b ui-btn-inline ui-btn-icon-left ui-icon-carat-l ui-mini ui-corner-all" id="init_arrivee">Retour</a>
+      <h1>iTrain</h1>
+      <a href="#info_00" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-icon-info ui-btn-icon-right ui-mini ui-corner-all">Infos</a>
+    </div>
+    <div data-role="popup" id="info_00" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+          <h4 style="text-align:center;">Informations | Date</h4>
+          <h2 style="text-align:center;">
+            <img src="img/r.png" alt="" width="" height="">
+          </h2>
+          <p>Cliquez dans la zone rectangulaire sombre. La date choisis pour la reservation doit etre superieur a la date de ce jour, donc vous ne pouvez choisir une date de reservation se trouvant dans le passé </p>
+          <div style="text-align:center;">
+            <a href="#" data-rel="back" class="ui-shadow ui-btn-b ui-mini ui-btn ui-corner-all ui-btn-inline ui-mini">Fermer</a>
+          </div>
+        </div>
+
+    <div data-role="content">
+    <h2 style="text-align:center;">
+      <img src="img/r_64.png" alt="" width="" height="">
+    </h2>
+    <p style="text-align:center;">A quelle date souhaitez vous voyager?</p>
+      <div class="ui-field-contain" style="text-align:center;">
+        <input data-role="date" type="text" data-inline="true" data-clear-btn="true" id="reservation_date_depart" placeholder="Cliquez ici " style="background:black; color:white;" readonly>
+      </div>
+    </div>
+    <div data-role="footer" style="background: rgba(0,0,0,0); z-index: 2; border-color:transparent;" data-theme="b" data-position="fixed">
+    <h1>
+      <a href="#" data-transition="slide" class="ui-btn ui-btn-center ui-corner-all ui-btn-active" id="continuer">Je continu</a>
+    </h1>
+    </div>
+  </div>
+      
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	<script src="js/script.js"></script>
+  <script src="js/sweet-alert.min.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/datepicker-fr.js"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/progressbar.js"></script>
+  <script src="js/circle-progress.js"></script>
+  <script>
+    $(document).one('pageshow', '#index', function(evt){
+      /*s il l utilisateur met du temps pour faire une action, on lui propose une aide*/
+      var tmp = 0
+      var attente = setInterval(function(){
+        tmp = tmp + 1;
+        if (tmp == 60) {  //une minute
+          //on lui demande s il a besoin d'une aide, et ainsi on ouvre le guide-panel
+          $("#GTKInfoPopupAide").popup("open");
+          clearInterval(attente);  //on arrete le compteur
+        }
+      }, 1000);
+    })
+    ///////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //il click sur le bouton comment ca marche (ccm) et ensuite ouverture de guide-popup
+    $(document).on('click', '#ccm', function(){
+      //on ouvre le panel
+      $("#GTKInfoPopupAide").popup("close");
+      $("#guide-panel").panel("open");
+    })
+    //////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////
+    //quand on affiche la page #form, on informe le visiteur
+    $(document).on('pageshow', '#form', function(){
+      var url = location.hash;
+      if (url == '#form') {
+        //on verifi si le navigateur est compatible localStorage
+        if (typeof(Storage) !== 'undefined') {
+          //
+          if (localStorage.getItem("nom")) {
+              $( "#popupArrow" ).popup( "open" );
+
+              //on ferme le popup au touché
+              $("#popupArrow").on("click", function(){
+                $(this).popup("close");
+              })
+            } 
+            else {
+              //s il le visiteur en question est dans une autre page que #form
+              $( "#nocookie" ).popup( "open" );
+
+              //on ferme le popup au touché
+              $("#popupArrow").on("click", function(){
+                $(this).popup("close");
+              })
+            }
+          }
+          else{
+            //le navigateur n est pas compatible
+            swal({
+              title: "Erreur",
+              text: "Il se peux que votre navigateur ne soit pas compatible aux sauvegardes locales",
+              type: "error",
+              confirmButtonText: "Je comprend"
+            });
+          }
+
+        } 
+        else {
+          //alert('Nous ne sommes pas encore dans le formulaire');
+          //on ne dis aussi rien
+        }
+    })
+    ///////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //remplicage automatique des informations personnelles
+    $("#auto_remplir").on("click", function(){
+      //verifie si le navigateur est compatible localStoral
+      if (window.localStorage) {
+        //on charge les differents element du formulaire se trouvant dans le localStorage
+        var localStorage_nom = localStorage.getItem("nom");
+        var localStorage_prenom = localStorage.getItem("prenom");
+        var localStorage_telephone = localStorage.getItem("telephone");
+        var localStorage_email = localStorage.getItem("email");
+        //on charge les elements
+        $("#nom").val(localStorage_nom);
+        $("#prenom").val(localStorage_prenom);
+        $("#telephone").val(localStorage_telephone);
+        $("#email").val(localStorage_email);
+
+        //si tout c'est bien passé on ferme le popup
+        $("#popupArrow").popup("close");
+      }  //fin de la verification de la compatiblité du localStorage
+      else{
+        //le navigateur n'est pas compatible localstorage
+        //on verifie si les cookies contiennent quelques choses
+        if ($.cookie("nom") != "" || $.cookie("telephone") != "") {
+          //on active les cookies
+          var cookie_nom = $.cookie("nom");
+          var cookie_prenom = $.cookie("prenom");
+          var cookie_telephone = $.cookie("telephone");
+          var cookie_email = $.cookie("email");
+
+          //on charge les elements dans les zones de text du formulaire
+          $("#nom").val($.cookie("nom"));
+          $("#prenom").val($.cookie("prenom"));
+          $("#telephone").val($.cookie("telephone"));
+          $("#email").val($.cookie("email"));
+        }
+        else{
+          swal({
+            title: "Erreur",
+            text: "Impossible de trouver vos informations personnelles",
+            type: "error",
+            cancelButtonText: "Saisir"
+          });
+        } //fin du else
+        
+
+      }
+
+    })
+  ////////////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////////
+    //verification et mise a jour du cache du navigateur
+    window.applicationCache.addEventListener('updateready', function(e) {
+      if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+        // Browser downloaded a new app cache.
+        swal({
+          title: "Mise à jour",
+          text: "Une nouvelle version est disponible, mettre à jour maintenant?",
+          type: "info",
+          allowOutsideClick: false,
+          showCancelButton: true,
+          cancelButtonText: "Annuler",
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Mettre à jour"
+        },
+          function(){
+            //mise à jour du cache d'application
+            window.location.reload();
+          });
+      } 
+      else {
+        // Manifest didn't changed. Nothing new to server.
+      }
+    }, false);
+  ///////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////
+  $(function(){
+    var temps = new Date();
+    var jr = temps.getDate();
+    var ms = temps.getMonth()+1;
+    var an = temps.getFullYear();
+
+    var timer = setInterval(function(){
+      $("#heure").text(jr+"/"+ms+"/"+an);
+    }, 100);
+
+    //on cache l'icone centrale de la page #index
+    $("#demarrer").hide();
+
+
+    //chargement du cercle
+    $('#circle').circleProgress({
+        value: 1.0,
+        size: 150,
+        fill: {
+            gradient: ["red", "orange"]
+        }
+    });
+
+    //on change l etat du btn reservation
+    $("#btn-reservation").removeClass("ui-btn-active").addClass("ui-state-disabled").text("Lecture du cache ...");
+    /*var instance = $('#circle').data('circle-progress');
+    console.log(instance);*/
+    //des que l'animatio est terminee on charge le reste d'informa
+    $('#circle').on('circle-animation-end', function(event){
+      //console.log("Animation terminee");
+      $(this).hide();
+      $("#block").css("display", "");
+      //on active une animation sur le logo central
+      $("#logo").addClass("animated pulse");
+
+      //modification de l'etat du btn en pied de la page #index
+      $("#btn-reservation").removeClass("ui-state-disabled").addClass("ui-btn-active").text("Je fais ma reservation");
+    })
+  });
+  //////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////
+  //$("body").page({ domCache: true });
+  function noBack(){
+    window.history.forward()
+  }
+
+  noBack();
+  
+  window.onload=noBack;
+  window.onpageshow=function(evt){
+    if(evt.persisted)
+      noBack()
+  }
+
+    window.onunload=function(){
+    void(0)
+  }
+  //////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////
+  //activation des parametres de geolocalisation
+  $(document).on('change', '#geo-param', function(){
+    var p = $("#geo-param").val();
+    var id;
+    console.log(p);
+    
+    if (p === "on") {
+      if(navigator.geolocation){
+        function successPosition(position){
+          var latitude = position.coords.latitude;
+          var longitude = position.coords.longitude;
+          console.log("votre position : latitude : "+latitude+", logitude : "+longitude);
+        }
+
+        id = navigator.geolocation.watchPosition(successPosition);
+      }
+      else{
+        console.log("Le navigateur est incompatible HTML5");
+      }
+    }
+    if (p === "off"){
+      navigator.geolocation.clearWatch(id);
+      $("#geo-param").val("off");
+
+    }
+    //console.log("Parametres enregistré!");
+    //console.log("etat : "+localStorage.getItem("geo-param"));
+  })
+  //////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////
+  //activation des parametres d'apparence  de l'application
+  $(document).on('change', '#apparence-param', function(){
+    var w = $("#apparence-param").val();
+    var id;
+    console.log(w);
+    if (w == "noir") {
+      //on active theme b
+      console.log($('div').attr("data-theme"));
+    }
+    //console.log("Parametres enregistré!");
+    //console.log("etat : "+localStorage.getItem("geo-param"));
+  })
+  //////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////
+  //activation du vibreur
+  $(document).on('change', '#vibre-param', function(){
+    var v = $("#vibre-param").val();
+    if (v === "on") {
+      //
+      if (navigator.vibrate) {
+        //on active le vibreur du terminal s'il en a un fonctionnel
+        navigator.vibrate(250);
+        console.log("Vibreur activé");
+      }
+      else{
+        console.log("Votre terminal ne peux vibrer");
+      }
+    }
+    if (v === "off") {
+      //
+      console.log("Vibreur désactivé");
+
+    }
+  })
+</script>
+</body>
+</html>
