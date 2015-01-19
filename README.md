@@ -1,4 +1,5 @@
 iTrain
 ======
 
-deevloppement de l'application de reservation en ligne
+Surfez, cliquer, payez, partez
+Cette application utilise les bibliotheques jquery, jquery ui, sweet alert, jquery cookie
